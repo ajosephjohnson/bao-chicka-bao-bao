@@ -1,2 +1,5 @@
 # IDE
 .history
+
+# Mac OS
+.DS_Store

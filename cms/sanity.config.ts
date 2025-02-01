@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'bao',
 
-  projectId: 'cdot5lwa',
+  projectId: 'szp5t64d',
   dataset: 'production',
 
   plugins: [structureTool(), visionTool()],

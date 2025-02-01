@@ -52,7 +52,7 @@ npm run dev
 #### Start the **Sanity Studio**:
 ```sh
 cd cms
-npx sanity start
+npm run dev
 ```
 
 ## 🎯 Features
