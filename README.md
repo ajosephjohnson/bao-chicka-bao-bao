@@ -3,6 +3,8 @@
 This project is a **Next.js + Sanity CMS** web app for a **pop-up kitchen menu**.  
 It allows the owner to easily update the menu weekly using a **Sanity CMS dashboard**, and customers can scan a **QR code** to view the latest menu while waiting in line.
 
+Based on the [Next Sanity Toolkit](https://github.com/sanity-io/next-sanity/).
+
 ## 📂 Project Structure
 
 ```
