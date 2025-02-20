@@ -175,3 +175,49 @@ export type SanityImageMetadata = {
 
 export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Slug | MenuItem | Brand | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+// Source: ../web/src/app/layout.tsx
+// Variable: BRAND_QUERY
+// Query: *[_type == "brand"][0]{  logo,  restaurantName}
+export type BRAND_QUERYResult = {
+  logo: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  restaurantName: string | null;
+} | null;
+
+// Source: ../web/src/app/page.tsx
+// Variable: MENU_QUERY
+// Query: *[_type == "menuItem"]{  title,  description,  price,  image}
+export type MENU_QUERYResult = Array<{
+  title: string | null;
+  description: string | null;
+  price: number | null;
+  image: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+}>;
+
+// Query TypeMap
+import "@sanity/client";
+declare module "@sanity/client" {
+  interface SanityQueries {
+    "*[_type == \"brand\"][0]{\n  logo,\n  restaurantName\n}": BRAND_QUERYResult;
+    "*[_type == \"menuItem\"]{\n  title,\n  description,\n  price,\n  image\n}": MENU_QUERYResult;
+  }
+}
