@@ -20,7 +20,7 @@ export default async function Home() {
   const menuItems = await getMenuData();
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h2 className="text-3xl font-bold text-center mb-12">Our Menu</h2>
+      <h2 className="text-4xl text-center mb-12 font-[family-name:var(--font-geist-mono)]">MENU</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {menuItems?.map((item, index) => (
           <div key={index} className="border rounded-lg overflow-hidden shadow-sm">
@@ -34,15 +34,15 @@ export default async function Home() {
                 />
               </div>
             )}
-            <div className="p-4">
+            <div className="p-4 font-[family-name:var(--font-geist-mono)]">
               <div className="flex justify-between items-start mb-2">
                 <h3 className="text-lg font-semibold">{item.title}</h3>
-                <span className="text-lg font-mono">
+                <span className="text-lg">
                   ${typeof item.price === 'number' ? item.price.toFixed(2) : item.price}
                 </span>
               </div>
               {item.description && (
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
+                <p className="text-gray-600 dark:text-gray-300 text-base">
                   {item.description}
                 </p>
               )}

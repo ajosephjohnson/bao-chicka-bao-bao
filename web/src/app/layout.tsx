@@ -43,21 +43,16 @@ export default async function RootLayout({
   const brand = await getBrandData();
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <header className="flex justify-center items-center flex-col p-4 border-b">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <header className="flex justify-center">
           {brand?.logo && (
             <Image
-              src={builder.image(brand.logo).width(50).height(50).url()}
+              src={builder.image(brand.logo).width(600).height(600).url()}
               alt={brand?.restaurantName ?? "Restaurant logo"}
-              width={50}
-              height={50}
+              width={300}
+              height={300}
               className="object-contain"
             />
-          )}
-          {brand?.restaurantName && (
-            <h1 className="text-xl font-semibold">{brand.restaurantName}</h1>
           )}
         </header>
         {children}
